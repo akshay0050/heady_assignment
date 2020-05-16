@@ -1,0 +1,2 @@
+CREATE TABLE 't_product_info' ( '_id' INTEGER PRIMARY KEY AUTOINCREMENT, 'productId' INTEGER UNIQUE NOT NULL ON CONFLICT REPLACE, 'categoryName' TEXT,'productJson' TEXT);
+CREATE TABLE 't_product_category' ( '_id' INTEGER PRIMARY KEY AUTOINCREMENT, 'categoryId' INTEGER UNIQUE NOT NULL ON CONFLICT REPLACE, 'categoryName' TEXT,'categoryJson' TEXT);

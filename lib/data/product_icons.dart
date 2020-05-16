@@ -1,0 +1,20 @@
+var productIcons =
+  {
+    "Casuals":"assets/images/img_casuals_shoes.jpg",
+    "Jeans":"assets/images/img_jeans.jpg",
+    "T-Shirts":"assets/images/img_tshirt.jpg",
+    "Tracks & Trousers":"assets/images/img_track_trousers.jpg",
+    "Formals":"assets/images/img_formals.jpg",
+    "Shirts":"assets/images/img_shirts.jpg",
+    "Apple":"assets/images/img_apple.png",
+    "Samsung":"assets/images/img_samsung.jpg",
+    "Dell":"assets/images/img_dell.png",
+    "Toshiba":"assets/images/img_toshiba.jpg",
+    "Mens Wear":"assets/images/img_mens_wear.jpg",
+    "Bottom Wear":"assets/images/img_bottom_wear.jpg",
+    "Foot Wear":"assets/images/img_foot_wear.jpg",
+    "Upper Wear":"assets/images/img_upper_wear.jpg",
+    "Electronics":"assets/images/img_electronics.jpg",
+    "Mobiles":"assets/images/img_mobiles.jpg",
+    "Laptops":"assets/images/img_laptops.jpg",
+  };
