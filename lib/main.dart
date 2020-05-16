@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Heady Assignment',
+        title: "Heady's Shopping Cart",
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.purple,
         ),

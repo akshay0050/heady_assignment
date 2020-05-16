@@ -71,7 +71,7 @@ class MainShopPageState extends State<MainShopPageStateCreate> {
               return buildLoading();
             } else if (state is ProductDataLoaded) {
               print("loaded data is  ${state.allProductData.toJson()}");
-              return MainShopPageManageState(state.allProductData);
+              return MainShopPageManageState(state.allProductData,productBloc);
             } else if(state is NoInternetError) {
               this.errorMsg = CommonMessage.noInternetMsg;
               return buildErrorScreen();
@@ -143,18 +143,20 @@ class MainShopPageState extends State<MainShopPageStateCreate> {
 
 class MainShopPageManageState extends StatefulWidget {
   final AllProductDataModel allProductData;
-  MainShopPageManageState(this.allProductData);
+  final dynamic productBloc;
+  MainShopPageManageState(this.allProductData, this.productBloc);
 
   @override
   State<StatefulWidget> createState() {
-    return _MainShopPageState(allProductData);
+    return _MainShopPageState(allProductData,this.productBloc);
   }
 }
 
 class _MainShopPageState extends State<MainShopPageManageState> {
+  dynamic productBloc;
   AllProductDataModel allProductData;
   int _currentBottomTabIndex = 0;
-  _MainShopPageState(this.allProductData);
+  _MainShopPageState(this.allProductData,this.productBloc);
 
   @override
   void initState() {
@@ -166,12 +168,28 @@ class _MainShopPageState extends State<MainShopPageManageState> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Heady Assignment"),
+          title: Text("Heady's Store"),
           centerTitle: true,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.refresh,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                // do something
+                refreshScreen();
+              },
+            )
+          ],
         ),
         bottomNavigationBar: buildBottomNavigationBar(),
         body:buildProductCategoryList()
     );
+  }
+
+  void refreshScreen() {
+    widget.productBloc.add(GetAllProductData());
   }
 
   Widget buildProductCategoryList() {
